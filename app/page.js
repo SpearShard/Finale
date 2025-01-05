@@ -1,104 +1,234 @@
 "use client";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { gsap } from "gsap";
 import Navbar from "./components/Navbar";
-import About from './components/About';
+import About from "./components/About";
 import Events from "./components/Events";
+import Teams from "./components/Teams";
+import Footer from "./components/Footer";
+// Import the Scroll component
+
 
 export default function Home() {
+  const logoRef = useRef(null);
+  const navbarRef = useRef(null);
+  const textSectionRef = useRef(null); // Ref for the text section
+  const blobRef = useRef(null); // Ref for the blob.svg
+  const [isMobile, setIsMobile] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false); // Track fullscreen state
+
+  // Detect screen size on load and on resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.matchMedia("(max-width: 767px)").matches);
+    };
+
+    handleResize(); // Run on initial load
+    window.addEventListener("resize", handleResize);
   
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isMobile]);
+
+  // Fullscreen change listener
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+    };
+  }, []);
+
+  // GSAP Animation for Logo, Navbar, Text, and Blob
+  useEffect(() => {
+    const animateLogoAndText = () => {
+      const logoScale = isMobile ? 0.18 : 0.18;
+      const logoPosition = isMobile ? "-45vw" : "0";
+      const logoVerticalShift = isMobile ? "-53.2vh" : "-23rem";
+      const logoMarginLeft = isMobile ? "1rem" : "0";
+      const logoMarginTop = isMobile ? "0.1vh" : "0";
+
+      const tl = gsap.timeline();
+
+      // Logo animation
+      tl.to(logoRef.current, {
+        scale: logoScale,
+        x: logoPosition,
+        y: logoVerticalShift,
+        marginLeft: logoMarginLeft,
+        marginTop: logoMarginTop,
+        duration: 0.5,
+        delay: 1,
+      });
+
+      // Left and right navbar animations
+      tl.fromTo(
+        navbarRef.current.querySelector(".left-nav"),
+        { x: 50 },
+        { x: 0, opacity: 1, duration: 0.5 },
+        "<"
+      ).fromTo(
+        navbarRef.current.querySelector(".right-nav"),
+        { x: -50 },
+        { x: 0, opacity: 1, duration: 0.5 },
+        "<"
+      );
+
+      // Text animation after logo animation
+      tl.fromTo(
+        textSectionRef.current,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1 },
+        "<+0.5" // Add a slight delay to start the animation after logo finishes
+      );
+
+      // Blob animation after text animation
+      tl.fromTo(
+        blobRef.current,
+        { opacity: 0, scale: 0.5 },
+        { opacity: 1, scale: 1, duration: 1 },
+        "<" // Add delay for blob animation
+      );
+    };
+
+    animateLogoAndText();
+  }, [isMobile]); // Trigger animation on mobile or fullscreen change
+
+  const getTopValues = () => {
+    if (isFullscreen) {
+      return { meme1: "100vh", meme2: "100vh" }; // Adjust values for fullscreen
+    } else {
+      return { meme1: "-40vh", meme2: "-55vh" }; // Default values
+    }
+  };
+
+  const topValues = getTopValues();
+
   return (
-    <div className="min-h-screen w-full relative">
+    <div id="home" className="min-h-full relative overflow-hidden bg-black">
       {/* Background Gradient Layer */}
-      <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-[#020084] to-[#000149] z-0"></div>
-      
+     
+
       {/* Background Image Layer */}
-      <div
-        className="absolute inset-0 w-full h-full"
+      {/* <div
+        className="absolute inset-0 w-screen h-screen bg-center bg-no-repeat sm:bg-contain min-lg:bg-cover"
         style={{
-          backgroundImage: "url('/gradient-rectangle.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundImage: "url('/Background.svg')",
         }}
-      ></div>
-      
+      ></div> */}
+
+
       {/* Background Vector Image */}
-      <Image
-        src="/Vector up.png"
-        alt="vector 1"
-        layout="fill"
-        objectFit="cover"
-        className="absolute top-0 left-0 z-0 opacity-60"
-      />
+      <div
+        className="absolute inset-0 w-full h-full bg-center  max-sm:bg-contain lg:bg-cover z-0"
+        style={{ backgroundImage: "url('/Background.svg')" }}
+      ></div>
+
+      
 
       {/* Main Content */}
-      <div className=" home relative z-10">
+      <div className="relative z-10 h-full w-full">
         {/* Navbar */}
-        <Navbar />
+        <div ref={navbarRef}>
+          <Navbar />
+        </div>
+
+
+        <div className="logo-custom absolute mt-7 min-w-[100vw] flex justify-center min-sm:left-1 min-sm:right-1 max-sm:h-[90vh]">
+          <Image
+            ref={logoRef}
+            src="/logo.svg"
+            alt="MSC Logo"
+            width={500}
+            height={500}
+          />
+        </div>
 
         {/* Main Page Content */}
-        <div className="grid grid-cols-3 w-full h-auto">
-          <div className="flex col-span-3 lg:flex-row items-center justify-between w-full px-0 m-0">
+        <div className="grid grid-cols-1 lg:grid-cols-3 w-full h-auto px-4 lg:px-8 py-12 gap-8 bg-am">
+          <div className="relative flex flex-col col-span-3 lg:flex-row items-center justify-between w-full bg-red h-[80vh] md:justify-center sm:justify-center max-sm:justify-center">
             {/* Text Section */}
-            <div className="text-white lg:w-1/2 text-center lg:text-left m-2 mb-8 lg:mb-0 px-4">
-              <h1 className="font-extrabold text-6xl mb-4">Microsoft Learn</h1>
-              <h1 className="font-extrabold text-6xl mb-4 whitespace-nowrap">Student Ambassadors</h1>
-              <h2 className="font-extrabold text-4xl text-blue-600">CIT CHAPTER</h2>
-              <p className="text-sm">
+            <div
+              ref={textSectionRef}
+              className="text-white lg:w-1/2 text-center lg:text-left m-2 mb-8 lg:mb-0 bg-b z-10 lg:absolute lg:left-0 lg:ml-0 max-sm:p-3"
+            >
+              <h1 className="font-extrabold text-3xl md:text-5xl lg:text-6xl font-[CB] max-sm:-mt-16 max-sm:absolute bg-clip-text text-transparent bg-gradient-to-r from-[#8AAAE5] ">
+                Microsoft Learn
+              </h1>
+              <h1 className="font-extrabold text-3xl md:text-5xl lg:text-6xl whitespace-nowrap font-[CB] max-sm:-mt-10 max-sm:absolute bg-clip-text text-transparent bg-gradient-to-r from-transparent  to-[#FFFFFF]">
+                Student Ambassadors
+              </h1>
+              <h2 className="font-extrabold text-2xl md:text-3xl lg:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-[#1E2761]  to-[#408EC6] font-[CB] max-sm:absolute">
+                CIT CHAPTER
+              </h2>
+              <p className="p-3 text-sm md:text-base mt-4 font-[CB] max-sm:mt-96 max-sm:text-left bg-[#11182784] max-sm:p-3 rounded-2xl max-sm:w-96">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit pariatur porro mollitia, necessitatibus tenetur optio fugiat aut molestiae ea, velit totam dolore quam ratione?
               </p>
             </div>
 
             {/* Foreground Image */}
-            <div className="relative lg:w-1/2 flex justify-center lg:justify-end">
+            <div className="absolute right-0 lg:w-1/2 flex justify-center lg:justify-end b h-full w-full pt-[3rem] md:h-auto sm:h-auto max-sm:pt-0 max-sm:h-auto">
               <Image
-                src="/fluids.png"
+                ref={blobRef}
+                src="/blob.svg"
                 alt="MSC Logo"
-                width={1000}
-                height={1000}
+                width={800}
+                height={800}
                 className="rounded-sm bg-opacity-100 object-cover"
               />
             </div>
           </div>
         </div>
 
-        <div className="relative w-full h-36">
-          {/* Background Image */}
-          <div className="absolute z-0"> {/* Add margin between images if needed */}
-            <Image 
-              src="/banner2.png"
-              alt="banner"
-              width={1920}
-              height={36}
-              className="w-full"
-            />
-          </div>
+        
 
-          <div className="absolute z-10">
-            <Image
-              src="/banner 1.png"
-              alt="banner"
-              width={1920}
-              height={36}
-              className="w-full"
-            />
-          </div>
+        {/* Section Divider */}
+        <div className="-mt-16 relative w-full h-[16vh]">
+          <img
+            src="/Banner2.svg"
+            alt="banner"
+            className="absolute z-0 w-full h-full object-cover max-sm:object-fill md:object-cover"
+            width={1920}
+            height={36}
+          />
+          <img
+            src="/Banner1.svg"
+            alt="banner"
+            className="absolute z-10 w-full h-full object-cover max-sm:object-fill md:object-cover"
+            width={1920}
+            height={36}
+          />
         </div>
 
+
         {/* About Section */}
-        <div id="about" className="about w-full scroll-mt-20 text-white">
+        <div id="about" className="about w-full scroll-mt-20 text-white px-4 lg:px-8 py-12 max-sm:py-0 max-sm:-mt-20">
           <About />
         </div>
 
         {/* Events Section */}
-        {/* <div id="events" className="events w-full scroll-m-20 text-white">
+        <div id="events" className="events w-full scroll-mt-20 text-white px-4 lg:px-8 py-12">
           <Events />
-        </div> */}
+        </div>
+
+        {/* Teams Section */}
+        <div
+          id="teams"
+          className="teams w-full text-white overflow-x-visible scroll-mt-10 px-4 lg:px-8 py-12"
+        >
+          <Teams />
+        </div>
+      </div>
+
+      <div className="max-sm:mt-36">
+        <Footer />
       </div>
     </div>
   );
 }
-
-
-
-
