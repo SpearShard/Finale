@@ -186,7 +186,7 @@ const Page = () => {
             Innovating Through Technology
             </h3>
             <p className="text-gray-300 mb-4 text-sm leading-relaxed font-[GMVF]">
-            Our technical team is the backbone of the club, driving innovation and excellence through technology. We're passionate about creating impactful solutions and sharing knowledge with our community.
+            Our technical team is the backbone of the club, driving innovation and excellence through technology. We&apos;re passionate about creating impactful solutions and sharing knowledge with our community.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

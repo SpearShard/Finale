@@ -271,12 +271,15 @@ const Navbar = () => {
             </>
           ) : (
             <button
-              onClick={handleSignOut}
+              onClick={() => {
+                handleSignOut();
+                setIsMenuOpen(false);
+              }}
               className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300"
-              onClick={() => setIsMenuOpen(false)}
             >
               SIGN OUT
             </button>
+
           )}
         </div>
       </div>

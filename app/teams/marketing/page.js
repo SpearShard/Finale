@@ -103,7 +103,7 @@ const Page = () => {
             Driving Growth Through Marketing
             </h3>
             <p className="text-gray-300 mb-4 text-sm leading-relaxed font-[GMVF]">
-            Our marketing team is the driving force behind the club's growth and outreach initiatives. We're dedicated to creating impactful campaigns, building strategic partnerships, and expanding our club's presence.
+            Our marketing team is the driving force behind the club&apos;s growth and outreach initiatives. We&apos;re dedicated to creating impactful campaigns, building strategic partnerships, and expanding our club&apos;s presence.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

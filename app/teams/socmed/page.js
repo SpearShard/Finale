@@ -103,7 +103,7 @@ const Page = () => {
             </h3>
             <p className="text-gray-300 mb-4 text-sm leading-relaxed font-[GMVF]">
               Our social media team is the voice of the club, creating engaging content and building meaningful connections. 
-              We're dedicated to showcasing our club's activities and keeping our community informed and entertained.
+              We&apos;re dedicated to showcasing our club&apos;s activities and keeping our community informed and entertained.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

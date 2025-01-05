@@ -190,14 +190,14 @@ export default function Home() {
 
         {/* Section Divider */}
         <div className="-mt-16 relative w-full h-[16vh]">
-          <img
+          <Image
             src="/Banner2.svg"
             alt="banner"
             className="absolute z-0 w-full h-full object-cover max-sm:object-fill md:object-cover"
             width={1920}
             height={36}
           />
-          <img
+          <Image
             src="/Banner1.svg"
             alt="banner"
             className="absolute z-10 w-full h-full object-cover max-sm:object-fill md:object-cover"

@@ -153,7 +153,7 @@ const Page = () => {
                 Creating Visual Excellence
               </h3>
               <p className="text-gray-300 mb-4 text-sm leading-relaxed font-[GMVF]">
-                Our design team is the creative force behind the club's visual identity. We're passionate about crafting beautiful, meaningful designs that communicate and inspire.
+                Our design team is the creative force behind the club&apos;s visual identity. We&apos;re passionate about crafting beautiful, meaningful designs that communicate and inspire.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -177,7 +177,7 @@ const Page = () => {
                     <FaPencilRuler size={20}/>
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2 font-[Khand]">Brand Identity</h3>
-                  <p className="text-gray-400 font-[GMVF]">Maintaining and evolving the club's visual brand.</p>
+                  <p className="text-gray-400 font-[GMVF]">Maintaining and evolving the club&apos;s visual brand.</p>
                 </div>
 
                 <div 
