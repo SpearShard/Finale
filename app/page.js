@@ -50,7 +50,7 @@ export default function Home() {
     const animateLogoAndText = () => {
       const logoScale = isMobile ? 0.18 : 0.25;
       const logoPosition = isMobile ? "-40vw" : "0";
-      const logoVerticalShift = isMobile ? "-56vh" : "-23rem";
+      const logoVerticalShift = isMobile ? "-56vh" : "-56vh";
       
       
 
@@ -138,13 +138,13 @@ export default function Home() {
         </div>
 
 
-        <div className="logo-custom absolute mt-9 w-full sm:h-[36rem] flex justify-center   max-sm:h-[36rem] ">
+        <div className="logo-custom absolute lg:mt-9 w-full sm:h-[36rem] flex justify-center   max-sm:h-[36rem] max-sm:mt-[9.4rem] ">
           <Image
             ref={logoRef}
             src="/logo.svg"
             alt="MSC Logo"
-            width={500}
-            height={500}
+            width={450}
+            height={450}
           />
         </div>
 
@@ -224,7 +224,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="max-sm:mt-36">
+      <div className="">
         <Footer />
       </div>
     </div>

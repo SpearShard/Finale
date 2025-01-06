@@ -161,7 +161,7 @@ const Page = () => {
       <div className="mt-32 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 py-10 shadow-2xl">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-10 text-white" data-aos="fade-down">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 font-[CB]">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 ">
             Meet Our Curation Team
           </span>
         </h2>
