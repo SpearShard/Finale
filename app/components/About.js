@@ -52,7 +52,7 @@ const About = () => {
   
 
   return (
-    <div ref={sectionRef} className=" mt-14 px-4 py-8 md:px-8 lg:px-16 h-[90vh]">
+    <div ref={sectionRef} className=" mt-14 px-4 py-8 md:px-8 lg:px-16 h-auto relative">
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-2xl font-[CB] sm:text-3xl lg:text-4xl font-bold mb-4">

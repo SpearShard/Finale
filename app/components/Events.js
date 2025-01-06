@@ -58,7 +58,7 @@ const Events = () => {
   return (
     <div
       ref={eventsSectionRef}
-      className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 py-16 px-6 md:px-12 lg:px-16 bg-[#111827c8] max-sm:mt-[85vh] rounded-2xl max-sm:h-[40rem]"
+      className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 py-16 px-6 md:px-12 lg:px-16 bg-[#111827c8] rounded-2xl max-sm:h-[40rem] relative"
     >
       {/* Image Section */}
       <div className="relative w-full flex justify-center items-center">
@@ -169,7 +169,7 @@ const Events = () => {
       </div>
 
       {/* Content Section */}
-      <div className="text-white max-sm:mt-32">
+      <div className="text-white max-sm:mt-32 sm:mt-24">
         <h1 className="text-3xl md:text-4xl font-bold mb-4 font-[CB]">
           Our Past <span className="text-blue-500">Events</span>
         </h1>
