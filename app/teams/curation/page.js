@@ -288,18 +288,18 @@ const Page = () => {
             className="text-3xl sm:text-4xl font-bold text-center mb-6 sm:mb-10 text-white"
             data-aos="fade-down"
           >
-            <span className="bg-clip-text text-transparentfont-[Excon] bg-gradient-to-r from-blue-400 to-purple-400">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 font-[Excon]">
               Meet Our Curation Team
             </span>
           </h2>
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
-            <div className="w-full md:w-1/2" data-aos="fade-right">
+            <div className="md:w-1/2" data-aos="fade-right">
               <Image
-                src="/images/team pics/Curation team.png"
+                src="/CurationTeam.png"
                 alt="Group Picture"
-                className="w-full max-w-lg rounded-lg shadow-lg border border-blue-500/20"
+                className="rounded-lg shadow-lg border border-blue-500/20"
                 width={640}
-                height={500}
+                height={500} // You can adjust the width and height as per your requirement
               />
             </div>
 
