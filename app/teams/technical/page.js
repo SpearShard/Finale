@@ -279,16 +279,15 @@ const Page = () => {
         </div>
       </div> */}
       <div className="mt-32 py-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 shadow-2xl">
-        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-3xl sm:text-4xl font-bold text-center mb-10 text-white"
+            className="text-4xl font-bold text-center mb-10 text-white"
             data-aos="fade-down"
           >
-            <span className="bg-clip-text text-transparent font-[Excon] bg-gradient-to-r from-blue-400 to-purple-400">
+            <span className="bg-clip-text text-transparent font-[Excon] bg-gradient-to-r from-blue-400 to-purple-400 ">
               Meet Our Technical Team
             </span>
           </h2>
-
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2" data-aos="fade-right">
               <Image
@@ -296,7 +295,7 @@ const Page = () => {
                 alt="Group Picture"
                 className="rounded-lg shadow-lg border border-blue-500/20"
                 width={640}
-                height={500} // Adjust the width and height as per your requirement
+                height={480} // Adjusted to fit better on mobile screens
               />
             </div>
 
