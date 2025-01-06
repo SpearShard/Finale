@@ -278,29 +278,29 @@ const Page = () => {
           </div>
         </div>
       </div> */}
-      <div className="mt-32 py-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 shadow-2xl">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mt-16 sm:mt-32 py-6 sm:py-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold text-center mb-10 text-white"
+            className="text-3xl sm:text-4xl font-bold text-center mb-6 sm:mb-10 text-white"
             data-aos="fade-down"
           >
-            <span className="bg-clip-text text-transparent font-[Excon] bg-gradient-to-r from-blue-400 to-purple-400 ">
+            <span className="bg-clip-text text-transparent font-[Excon] bg-gradient-to-r from-blue-400 to-purple-400">
               Meet Our Technical Team
             </span>
           </h2>
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-1/2" data-aos="fade-right">
+          <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-12">
+            <div className="w-full md:w-1/2" data-aos="fade-right">
               <Image
                 src="/images/team pics/Tech team.png"
                 alt="Group Picture"
-                className="rounded-lg shadow-lg border border-blue-500/20"
+                className="w-full max-w-lg rounded-lg shadow-lg border border-blue-500/20"
                 width={640}
-                height={480} // Adjusted to fit better on mobile screens
+                height={500}
               />
             </div>
 
-            <div className="md:w-1/2 md:pl-12" data-aos="fade-left">
-              <h3 className="text-3xl font-bold mb-6 text-white font-[Khand]">
+            <div className="w-full md:w-1/2 md:pl-12" data-aos="fade-left">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-white font-[Khand]">
                 Innovating Through Technology
               </h3>
               <p className="text-gray-300 mb-4 text-sm leading-relaxed font-[GMVF]">
@@ -310,7 +310,7 @@ const Page = () => {
                 knowledge with our community.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div
                   className="bg-gray-800/50 backdrop-blur p-6 rounded-xl shadow-lg border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300"
                   data-aos="fade-up"
