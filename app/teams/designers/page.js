@@ -250,7 +250,7 @@ const Page = () => {
           <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-12">
             <div className="md:w-1/2" data-aos="fade-right">
               <Image
-                src="/MediaTeam.png"
+                src="/DesignTeam.png"
                 alt="Group Picture"
                 className="rounded-lg shadow-lg border border-blue-500/20"
                 width={640}
@@ -353,7 +353,7 @@ const Page = () => {
             <Image
               src="/images/individual pics/sahithi.png"
               alt="Member 1"
-              className="w-32 h-32 mx-auto rounded-full mb-6 border-4 border-blue-400"
+              className="w-32 h-32 mx-auto rounded-full mb-6 "
               width={128}
               height={128}
             />
@@ -383,9 +383,9 @@ const Page = () => {
             data-aos-delay="100"
           >
             <Image
-              src="/images/individual pics/mehika.png"
+              src="/images/individual pics/mehika.jpg"
               alt="Member 2"
-              className="w-32 h-32 mx-auto rounded-full mb-6 border-4 border-blue-400"
+              className="w-32 h-32 mx-auto rounded-full mb-6 "
               width={128}
               height={128}
             />

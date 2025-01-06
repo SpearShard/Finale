@@ -38,7 +38,7 @@ const Page = () => {
   <div className="w-full h-full flex-col justify-center items-center  mb-6 ">
 
   <h2 className="text-4xl font-bold text-center mb-10 text-white" data-aos="fade-down ">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 font-[CB]">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 font-[Excon]">
             Meet Our Lead
           </span>
         </h2>
@@ -83,7 +83,7 @@ const Page = () => {
       <div className="mt-32 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 py-10 shadow-2xl">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-10 text-white" data-aos="fade-down">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 font-[CB]">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 font-[Excon]">
             Meet Our Marketing Team
           </span>
         </h2>
@@ -159,7 +159,7 @@ const Page = () => {
       </div>
     </div>
     <div className="mt-32 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 p-10 shadow-2xl z-10">
-      <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 font-[CB]" data-aos="fade-up">
+      <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 font-[Excon]" data-aos="fade-up">
         Team Volunteers
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12">

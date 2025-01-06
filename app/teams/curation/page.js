@@ -148,7 +148,7 @@ const Page = () => {
                 alt="Palleyboina Deekshitha"
                 width={128}
                 height={128}
-                className="w-32 h-32 mx-auto rounded-full mb-6 border-4 border-blue-400"
+                className="w-32 h-32 mx-auto rounded-full mb-6 "
               />
               <h3 className="text-3xl font-semibold font-[Khand] text-white">
                 Palleyboina Deekshitha
@@ -401,7 +401,7 @@ const Page = () => {
             data-aos="fade-up"
           >
             <Image
-              src="/images/individual pics/natalia.png"
+              src="/images/individual pics/natalia.jpg"
               alt="Member 1"
               className="w-32 h-32 mx-auto rounded-full mb-6 "
               width={128}
