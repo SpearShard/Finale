@@ -50,7 +50,7 @@ export default function Home() {
     const animateLogoAndText = () => {
       const logoScale = isMobile ? 0.18 : 0.25;
       const logoPosition = isMobile ? "-40vw" : "0";
-      const logoVerticalShift = isMobile ? "-56vh" : "-56vh";
+      const logoVerticalShift = isMobile ? "-56vh" : "-27rem";
       
       
 
@@ -138,7 +138,7 @@ export default function Home() {
         </div>
 
 
-        <div className="logo-custom absolute lg:mt-9 w-full sm:h-[36rem] flex justify-center   max-sm:h-[36rem] max-sm:mt-[9.4rem] ">
+        <div className="logo-custom absolute mt-32 w-full  flex justify-center   max-sm:h-[36rem] max-sm:mt-[9.4rem] ">
           <Image
             ref={logoRef}
             src="/logo.svg"

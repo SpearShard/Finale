@@ -39,7 +39,9 @@ const Page = () => {
       <div
         ref={sectionRef}
         className={`mt-16 rounded-lg bg-gray-800/30 backdrop-blur-lg border border-white/10 py-10 shadow-2xl max-sm- transition-transform duration-700 ${
-          sectionInView ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          sectionInView
+            ? "translate-y-0 opacity-100"
+            : "translate-y-10 opacity-0"
         }`}
       >
         <div className="container mx-auto px-4">
@@ -54,7 +56,9 @@ const Page = () => {
             {/* Member 1 */}
             <div
               className={`bg-gray-800/60 backdrop-blur-lg rounded-xl p-8 text-center border border-blue-500/20 hover:border-blue-500/40 transition-all duration-700 ${
-                sectionInView ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                sectionInView
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
               }`}
             >
               <Image
@@ -64,8 +68,12 @@ const Page = () => {
                 height={128}
                 className="w-32 h-32 mx-auto rounded-full mb-6 "
               />
-              <h3 className="text-3xl font-semibold text-white font-[Khand]">AV Subash</h3>
-              <p className="text-white text-lg font-medium mb-6 font-[Khand]">Curation Team Lead</p>
+              <h3 className="text-3xl font-semibold text-white font-[Khand]">
+                AV Subash
+              </h3>
+              <p className="text-white text-lg font-medium mb-6 font-[Khand]">
+                Curation Team Lead
+              </p>
               <div className="flex justify-center space-x-6">
                 <a
                   href="https://www.linkedin.com/in/subash-av-7586792ab/"
@@ -89,7 +97,9 @@ const Page = () => {
             {/* Member 2 */}
             <div
               className={`bg-gray-800/60 backdrop-blur-lg rounded-xl p-8 text-center border border-blue-500/20 hover:border-blue-500/40 transition-all duration-700 ${
-                sectionInView ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                sectionInView
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
               }`}
             >
               <Image
@@ -99,8 +109,12 @@ const Page = () => {
                 height={128}
                 className="w-32 h-32 mx-auto rounded-full mb-6 "
               />
-              <h3 className="text-3xl font-semibold font-[Khand] text-white">Neha Shantagiri</h3>
-              <p className="text-white font-[Khand] text-lg font-medium mb-6">Curation Team Lead</p>
+              <h3 className="text-3xl font-semibold font-[Khand] text-white">
+                Neha Shantagiri
+              </h3>
+              <p className="text-white font-[Khand] text-lg font-medium mb-6">
+                Curation Team Lead
+              </p>
               <div className="flex justify-center space-x-6">
                 <a
                   href="https://www.linkedin.com/in/neha-shantagiri-11a8b6298/"
@@ -124,7 +138,9 @@ const Page = () => {
             {/* Member 3 */}
             <div
               className={`bg-gray-800/60 backdrop-blur-lg rounded-xl p-8 text-center border border-blue-500/20 hover:border-blue-500/40 transition-all duration-700 ${
-                sectionInView ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                sectionInView
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
               }`}
             >
               <Image
@@ -134,8 +150,12 @@ const Page = () => {
                 height={128}
                 className="w-32 h-32 mx-auto rounded-full mb-6 border-4 border-blue-400"
               />
-              <h3 className="text-3xl font-semibold font-[Khand] text-white">Palleyboina Deekshitha</h3>
-              <p className="text-white text-lg font-[Khand] font-medium mb-6">Curation Team Lead</p>
+              <h3 className="text-3xl font-semibold font-[Khand] text-white">
+                Palleyboina Deekshitha
+              </h3>
+              <p className="text-white text-lg font-[Khand] font-medium mb-6">
+                Curation Team Lead
+              </p>
               <div className="flex justify-center space-x-6">
                 <a
                   href="https://www.linkedin.com/in/deekshi1124/"
@@ -158,151 +178,316 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <div className="mt-32 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 py-10 shadow-2xl">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-10 text-white" data-aos="fade-down">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 ">
-            Meet Our Curation Team
-          </span>
-        </h2>
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          <div className="md:w-1/2" data-aos="fade-right">
-            <Image 
-              src="/images/team pics/Curation team.png" 
-              alt="Group Picture" 
-              className="rounded-lg shadow-lg border border-blue-500/20"
-              width={640} 
-              height={500} // You can adjust the width and height as per your requirement
-            />
+      {/* <div className="mt-32 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 py-10 shadow-2xl">
+        <div className="container mx-auto px-4">
+          <h2
+            className="text-4xl font-bold text-center mb-10 text-white"
+            data-aos="fade-down"
+          >
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 ">
+              Meet Our Curation Team
+            </span>
+          </h2>
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="md:w-1/2" data-aos="fade-right">
+              <Image
+                src="/images/team pics/Curation team.png"
+                alt="Group Picture"
+                className="rounded-lg shadow-lg border border-blue-500/20"
+                width={640}
+                height={500} // You can adjust the width and height as per your requirement
+              />
+            </div>
+
+            <div className="md:w-1/2 md:pl-12" data-aos="fade-left">
+              <h3 className="text-3xl font-[Khand] font-bold mb-6 text-white">
+                Curating Excellence in Content
+              </h3>
+              <p className="text-gray-300 mb-4 text-sm leading-relaxed font-[GMVF]">
+                Our curation team is dedicated to collecting, organizing, and
+                delivering high-quality content and documentation. We ensure
+                that knowledge is preserved and shared effectively within our
+                community.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div
+                  className="bg-gray-800/50 backdrop-blur p-6 rounded-xl shadow-lg border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300"
+                  data-aos="fade-up"
+                >
+                  <div className="text-blue-400 mb-3">
+                    <FaBook size={20} />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2 font-[Khand]">
+                    Content Curation
+                  </h3>
+                  <p className="text-gray-400 font-[GMVF]">
+                    Carefully selecting and organizing valuable resources and
+                    materials.
+                  </p>
+                </div>
+
+                <div
+                  className="bg-gray-800/50 backdrop-blur p-6 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div className="text-purple-400 mb-3">
+                    <IoDocumentTextSharp size={20} />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2 font-[Khand]">
+                    Documentation
+                  </h3>
+                  <p className="text-gray-400 font-[GMVF]">
+                    Creating and maintaining comprehensive documentation for all
+                    club activities.
+                  </p>
+                </div>
+
+                <div
+                  className="bg-gray-800/50 backdrop-blur p-6 rounded-xl shadow-lg border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <div className="text-blue-400 mb-3">
+                    <FaBoxArchive size={20} />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2 font-[Khand]">
+                    Knowledge Repository
+                  </h3>
+                  <p className="text-gray-400 font-[GMVF]">
+                    Building and maintaining a centralized knowledge base for
+                    the club.
+                  </p>
+                </div>
+
+                <div
+                  className="bg-gray-800/50 backdrop-blur p-6 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <div className="text-purple-400 mb-3">
+                    <MdChecklist size={20} />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2 font-[Khand]">
+                    Quality Assurance
+                  </h3>
+                  <p className="text-gray-400 font-[GMVF]">
+                    Ensuring accuracy and quality of all curated content and
+                    documentation.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+      </div> */}
+      <div className="mt-16 sm:mt-32 py-6 sm:py-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden">
+        <div className="mx-auto px-4">
+          <h2
+            className="text-3xl sm:text-4xl font-bold text-center mb-6 sm:mb-10 text-white"
+            data-aos="fade-down"
+          >
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+              Meet Our Curation Team
+            </span>
+          </h2>
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
+            <div className="w-full md:w-1/2" data-aos="fade-right">
+              <Image
+                src="/images/team pics/Curation team.png"
+                alt="Group Picture"
+                className="w-full max-w-lg rounded-lg shadow-lg border border-blue-500/20"
+                width={640}
+                height={500}
+              />
+            </div>
 
-          <div className="md:w-1/2 md:pl-12" data-aos="fade-left">
-            <h3 className="text-3xl font-[Khand] font-bold mb-6 text-white">
-            Curating Excellence in Content
-            </h3>
-            <p className="text-gray-300 mb-4 text-sm leading-relaxed font-[GMVF]">
-            Our curation team is dedicated to collecting, organizing, and delivering high-quality content and documentation. We ensure that knowledge is preserved and shared effectively within our community.
-            </p>
+            <div className="w-full md:w-1/2 md:pl-12" data-aos="fade-left">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-white font-[Khand]">
+                Curating Excellence in Content
+              </h3>
+              <p className="text-gray-300 mb-4 text-sm leading-relaxed font-[GMVF]">
+                Our curation team is dedicated to collecting, organizing, and
+                delivering high-quality content and documentation. We ensure
+                that knowledge is preserved and shared effectively within our
+                community.
+              </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div 
-                className="bg-gray-800/50 backdrop-blur p-6 rounded-xl shadow-lg border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300" 
-                data-aos="fade-up"
-              >
-                <div className="text-blue-400 mb-3">
-                <FaBook size={20}/>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                <div
+                  className="bg-gray-800/50 backdrop-blur p-6 rounded-xl shadow-lg border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300"
+                  data-aos="fade-up"
+                >
+                  <div className="text-blue-400 mb-3">
+                    <FaBook size={20} />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2 font-[Khand]">
+                    Content Curation
+                  </h3>
+                  <p className="text-gray-400 font-[GMVF]">
+                    Carefully selecting and organizing valuable resources and
+                    materials.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2 font-[Khand]">Content Curation</h3>
-                <p className="text-gray-400 font-[GMVF]">Carefully selecting and organizing valuable resources and materials.</p>
-              </div>
 
-              <div 
-                className="bg-gray-800/50 backdrop-blur p-6 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300" 
-                data-aos="fade-up" 
-                data-aos-delay="100"
-              >
-                <div className="text-purple-400 mb-3">
-                <IoDocumentTextSharp size={20}/>
+                <div
+                  className="bg-gray-800/50 backdrop-blur p-6 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div className="text-purple-400 mb-3">
+                    <IoDocumentTextSharp size={20} />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2 font-[Khand]">
+                    Documentation
+                  </h3>
+                  <p className="text-gray-400 font-[GMVF]">
+                    Creating and maintaining comprehensive documentation for all
+                    club activities.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2 font-[Khand]">Documentation</h3>
-                <p className="text-gray-400 font-[GMVF]">Creating and maintaining comprehensive documentation for all club activities.</p>
-              </div>
 
-              <div 
-                className="bg-gray-800/50 backdrop-blur p-6 rounded-xl shadow-lg border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300" 
-                data-aos="fade-up" 
-                data-aos-delay="200"
-              >
-                <div className="text-blue-400 mb-3">
-                    <FaBoxArchive size={20}/>
+                <div
+                  className="bg-gray-800/50 backdrop-blur p-6 rounded-xl shadow-lg border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <div className="text-blue-400 mb-3">
+                    <FaBoxArchive size={20} />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2 font-[Khand]">
+                    Knowledge Repository
+                  </h3>
+                  <p className="text-gray-400 font-[GMVF]">
+                    Building and maintaining a centralized knowledge base for
+                    the club.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2 font-[Khand]">Knowledge Repository</h3>
-                <p className="text-gray-400 font-[GMVF]">Building and maintaining a centralized knowledge base for the club.</p>
-              </div>
 
-              <div 
-                className="bg-gray-800/50 backdrop-blur p-6 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300" 
-                data-aos="fade-up" 
-                data-aos-delay="300"
-              >
-                <div className="text-purple-400 mb-3">
-                  <MdChecklist size={20}/>
+                <div
+                  className="bg-gray-800/50 backdrop-blur p-6 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <div className="text-purple-400 mb-3">
+                    <MdChecklist size={20} />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2 font-[Khand]">
+                    Quality Assurance
+                  </h3>
+                  <p className="text-gray-400 font-[GMVF]">
+                    Ensuring accuracy and quality of all curated content and
+                    documentation.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2 font-[Khand]">Quality Assurance</h3>
-                <p className="text-gray-400 font-[GMVF]">Ensuring accuracy and quality of all curated content and documentation.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div className="mt-32 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 p-10 shadow-2xl">
-      <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-400 font-[CB] bg-clip-text text-transparent " data-aos="fade-up">
-        Team Members
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-        {/* Member 1 */}
-        <div className="team-card bg-gray-800/60 backdrop-blur-lg rounded-xl p-8 text-center" data-aos="fade-up">
-          <Image 
-            src="/images/individual pics/natalia.png" 
-            alt="Member 1" 
-            className="w-32 h-32 mx-auto rounded-full mb-6 "
-            width={128} 
-            height={128} 
-          />
-          <h3 className="text-xl font-semibold mb-4 text-white font-[Khand]">Natalia Mathews</h3>
-          <div className="flex justify-center space-x-6">
-            <a href="https://www.linkedin.com/in/natalia-mathews-b387b32bb/" className="social-icon text-gray-500 hover:text-blue-300">
-              <FaLinkedin size={24}/>
-            </a>
-            {/* <a href="https://www.instagram.com/acexswaroop/profilecard/?igsh=MWMyeWJtMmViNXlkdw==" className="social-icon text-gray-500 hover:text-pink-300">
+
+      <div className="mt-32 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 p-10 shadow-2xl">
+        <h2
+          className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-400 font-[CB] bg-clip-text text-transparent "
+          data-aos="fade-up"
+        >
+          Team Members
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {/* Member 1 */}
+          <div
+            className="team-card bg-gray-800/60 backdrop-blur-lg rounded-xl p-8 text-center"
+            data-aos="fade-up"
+          >
+            <Image
+              src="/images/individual pics/natalia.png"
+              alt="Member 1"
+              className="w-32 h-32 mx-auto rounded-full mb-6 "
+              width={128}
+              height={128}
+            />
+            <h3 className="text-xl font-semibold mb-4 text-white font-[Khand]">
+              Natalia Mathews
+            </h3>
+            <div className="flex justify-center space-x-6">
+              <a
+                href="https://www.linkedin.com/in/natalia-mathews-b387b32bb/"
+                className="social-icon text-gray-500 hover:text-blue-300"
+              >
+                <FaLinkedin size={24} />
+              </a>
+              {/* <a href="https://www.instagram.com/acexswaroop/profilecard/?igsh=MWMyeWJtMmViNXlkdw==" className="social-icon text-gray-500 hover:text-pink-300">
               <FaInstagram size={24}/>
             </a> */}
+            </div>
+          </div>
+
+          {/* Member 2 */}
+          <div
+            className="team-card bg-gray-800/60 backdrop-blur-lg rounded-xl p-8 text-center"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <Image
+              src="/images/individual pics/vidhula.png"
+              alt="Member 2"
+              className="w-32 h-32 mx-auto rounded-full mb-6 "
+              width={128}
+              height={128}
+            />
+            <h3 className="text-xl font-semibold mb-4 text-white font-[Khand]">
+              Vidhula Shree Shankar
+            </h3>
+            <div className="flex justify-center space-x-6">
+              <a
+                href="https://www.linkedin.com/in/vidhula-shree-shankar-2371062a7/"
+                className="social-icon text-gray-500 hover:text-blue-300"
+              >
+                <FaLinkedin size={24} />
+              </a>
+              <a
+                href="https://www.instagram.com/_vidhhh__/"
+                className="social-icon text-gray-500 hover:text-pink-300"
+              >
+                <FaInstagram size={24} />
+              </a>
+            </div>
+          </div>
+
+          {/* Member 3 */}
+          <div
+            className="team-card bg-gray-800/60 backdrop-blur-lg rounded-xl p-8 text-center"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <Image
+              src="/images/individual pics/tejaswini.png"
+              alt="Member 3"
+              className="w-32 h-32 mx-auto rounded-full mb-6 "
+              width={128}
+              height={128}
+            />
+            <h3 className="text-xl font-semibold mb-4 text-white font-[Khand]">
+              Naga Tejaswini Pathipati
+            </h3>
+            <div className="flex justify-center space-x-6">
+              <a
+                href="https://www.linkedin.com/in/tejaswini-p-5b0bb9299/"
+                className="social-icon text-gray-500 hover:text-blue-300"
+              >
+                <FaLinkedin size={24} />
+              </a>
+              <a
+                href="https://www.instagram.com/nagatejaswini.p/profilecard/?igsh=dm42eHZyN28xcG91"
+                className="social-icon text-gray-500 hover:text-pink-300"
+              >
+                <FaInstagram size={24} />
+              </a>
+            </div>
           </div>
         </div>
-
-        {/* Member 2 */}
-        <div className="team-card bg-gray-800/60 backdrop-blur-lg rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
-          <Image 
-            src="/images/individual pics/vidhula.png" 
-            alt="Member 2" 
-            className="w-32 h-32 mx-auto rounded-full mb-6 "
-            width={128} 
-            height={128} 
-          />
-          <h3 className="text-xl font-semibold mb-4 text-white font-[Khand]">Vidhula Shree Shankar</h3>
-          <div className="flex justify-center space-x-6">
-            <a href="https://www.linkedin.com/in/vidhula-shree-shankar-2371062a7/" className="social-icon text-gray-500 hover:text-blue-300">
-              <FaLinkedin size={24}/>
-            </a>
-            <a href="https://www.instagram.com/_vidhhh__/" className="social-icon text-gray-500 hover:text-pink-300">
-              <FaInstagram size={24}/>
-            </a>
-          </div>
-        </div>
-
-        {/* Member 3 */}
-        <div className="team-card bg-gray-800/60 backdrop-blur-lg rounded-xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
-          <Image 
-            src="/images/individual pics/tejaswini.png" 
-            alt="Member 3" 
-            className="w-32 h-32 mx-auto rounded-full mb-6 "
-            width={128} 
-            height={128} 
-          />
-          <h3 className="text-xl font-semibold mb-4 text-white font-[Khand]">Naga Tejaswini Pathipati</h3>
-          <div className="flex justify-center space-x-6">
-            <a href="https://www.linkedin.com/in/tejaswini-p-5b0bb9299/" className="social-icon text-gray-500 hover:text-blue-300">
-              <FaLinkedin size={24}/>
-            </a>
-            <a href="https://www.instagram.com/nagatejaswini.p/profilecard/?igsh=dm42eHZyN28xcG91" className="social-icon text-gray-500 hover:text-pink-300">
-              <FaInstagram size={24}/>
-            </a>
-          </div>
-        </div>
-
       </div>
-    </div>
     </div>
   );
 };
