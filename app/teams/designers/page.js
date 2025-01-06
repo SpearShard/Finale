@@ -417,7 +417,7 @@ const Page = () => {
             <Image
               src="/images/individual pics/daksha.png"
               alt="Member 3"
-              className="w-32 h-32 mx-auto rounded-full mb-6 border-4 border-blue-400"
+              className="w-32 h-32 mx-auto rounded-full mb-6 "
               width={128}
               height={128}
             />
