@@ -50,7 +50,7 @@ export default function Home() {
     const animateLogoAndText = () => {
       const logoScale = isMobile ? 0.18 : 0.25;
       const logoPosition = isMobile ? "-40vw" : "0";
-      const logoVerticalShift = isMobile ? "-56vh" : "-27rem";
+      const logoVerticalShift = isMobile ? "-30rem" : "-27rem";
       
       
 
