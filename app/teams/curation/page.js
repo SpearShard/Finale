@@ -288,7 +288,7 @@ const Page = () => {
             className="text-3xl sm:text-4xl font-bold text-center mb-6 sm:mb-10 text-white"
             data-aos="fade-down"
           >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+            <span className="bg-clip-text text-transparentfont-[Excon] bg-gradient-to-r from-blue-400 to-purple-400">
               Meet Our Curation Team
             </span>
           </h2>

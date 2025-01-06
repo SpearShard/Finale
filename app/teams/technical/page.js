@@ -289,7 +289,7 @@ const Page = () => {
             </span>
           </h2>
           <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-12">
-            <div className="w-full md:w-1/2" data-aos="fade-right">
+            {/* <div className="w-full md:w-1/2" data-aos="fade-right">
               <Image
                 src="/images/team pics/Tech team.png"
                 alt="Group Picture"
@@ -297,6 +297,15 @@ const Page = () => {
                 width={640}
                 height={500}
               />
+            </div> */}
+            <div className="md:w-1/2" data-aos="fade-right">
+            <Image 
+              src="/images/team pics/Media team.png" 
+              alt="Group Picture" 
+              className="rounded-lg shadow-lg border border-blue-500/20"
+              width={640} 
+              height={500} // You can adjust the width and height as per your requirement
+            />
             </div>
 
             <div className="w-full md:w-1/2 md:pl-12" data-aos="fade-left">
