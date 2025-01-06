@@ -58,7 +58,7 @@ const Events = () => {
   return (
     <div
       ref={eventsSectionRef}
-      className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 py-16 px-6 md:px-12 lg:px-16 bg-[#111827c8] max-sm:mt-96 rounded-2xl"
+      className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 py-16 px-6 md:px-12 lg:px-16 bg-[#111827c8] max-sm:mt-[85vh] rounded-2xl max-sm:h-[40rem]"
     >
       {/* Image Section */}
       <div className="relative w-full flex justify-center items-center">
