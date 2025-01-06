@@ -300,7 +300,7 @@ const Page = () => {
             </div> */}
             <div className="md:w-1/2" data-aos="fade-right">
             <Image 
-              src="/images/team pics/Media team.png" 
+              src="/TechTeam.png" 
               alt="Group Picture" 
               className="rounded-lg shadow-lg border border-blue-500/20"
               width={640} 
