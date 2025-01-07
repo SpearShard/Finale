@@ -5,8 +5,6 @@ import Cookies from "js-cookie";
 import { Link } from "react-scroll";
 import { gsap } from "gsap";
 
-
-
 const Navbar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,7 +41,7 @@ const Navbar = () => {
         { opacity: 0, scaleY: 0, transformOrigin: "top", ease:"power3.in", duration: 0.5 },
         { opacity: 1, scaleY: 1, duration: 0.5, ease: "power3.out" }
       );
-      
+
       // GSAP animation for the hamburger icon (3 dashes to cross)
       gsap.to(hamburgerRef.current, {
         rotate: 45,
@@ -69,7 +67,7 @@ const Navbar = () => {
       // Make the circle visible
       gsap.to(hamburgerRef.current.querySelector(".circle1"), {
         opacity: 1,
-        y: -25,x:-6,
+        y: -25, x: -6,
         duration: 0.3,
         ease: "power3.out",
       });
@@ -279,7 +277,6 @@ const Navbar = () => {
             >
               SIGN OUT
             </button>
-
           )}
         </div>
       </div>

@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import Lenis from "lenis";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Events from "./components/Events";
@@ -19,6 +20,14 @@ export default function Home() {
   const [isFullscreen, setIsFullscreen] = useState(false); // Track fullscreen state
 
   // Detect screen size on load and on resize
+  useEffect(() => {
+    const lenis = new Lenis();
+    function raf(time, any){
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }, []);
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.matchMedia("(max-width: 767px)").matches);

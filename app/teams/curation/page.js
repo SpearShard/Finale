@@ -1,4 +1,7 @@
 "use client";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import React from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
@@ -12,7 +15,7 @@ import { useInView } from "react-intersection-observer";
 
 const Page = () => {
   const router = useRouter();
-  const handleBackButtonClick = () => router.push("/teams");
+  const handleBackButtonClick = () => router.back();
 
   // Intersection observer for animations
   const { ref: sectionRef, inView: sectionInView } = useInView({
@@ -20,12 +23,19 @@ const Page = () => {
     triggerOnce: false, // Allow animation to reverse when scrolling up
   });
 
+  useEffect(() => {
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    }, []);
+
   return (
-    <div className="relative min-h-screen w-full bg-gradient-to-b from-[#020084] to-[#000149] flex flex-col items-center py-16 px-4">
+    <div className="relative min-h-screen w-full bg-gradient-to-b from-[#020084] to-[#000149] flex flex-col items-center py-16 px-4 overflow-hidden">
       {/* Back Button */}
       <button
         onClick={handleBackButtonClick}
-        className="absolute top-8 left-8 z-10 px-4 py-2 bg-gradient-to-r from-blue-400 to-purple-400 text-black font-semibold rounded-lg shadow-md hover:bg-gray-400 transition-all font-[Excon]"
+        className="absolute top-8 left-8 z-10 px-4 py-2 bg-gradient-to-r from-blue-400 to-purple-400 text-black font-semibold rounded-lg shadow-md hover:bg-gray-400 transition-all font-[Excon]" data-aos="slide-right"
       >
         Go Back
       </button>
@@ -282,7 +292,7 @@ const Page = () => {
           </div>
         </div>
       </div> */}
-      <div className="mt-16 sm:mt-32 py-6 sm:py-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden">
+      <div className="mt-16 sm:mt-32 py-6 sm:py-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden" data-aos="flip-right">
         <div className="mx-auto px-4">
           <h2
             className="text-3xl sm:text-4xl font-bold text-center mb-6 sm:mb-10 text-white"
@@ -387,7 +397,7 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="mt-32 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 p-10 shadow-2xl">
+      <div className="mt-32 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 p-10 shadow-2xl" data-aos="slide-up">
         <h2
           className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-400 font-[CB] bg-clip-text text-transparent "
           data-aos="fade-up"

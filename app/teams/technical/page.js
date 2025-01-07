@@ -1,5 +1,8 @@
 "use client";
 import React from "react";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
@@ -13,15 +16,22 @@ const Page = () => {
 
   const handleBackButtonClick = () => {
     console.log("Navigating to /");
-    router.push("/");
+    router.back();
   };
 
+  useEffect(() => {
+        AOS.init({
+          duration: 1000,
+          once: true,
+        });
+  }, []);
+
   return (
-    <div className="relative min-h-screen w-full bg-gradient-to-b from-[#020084] to-[#000149] flex flex-col items-center py-16 px-4">
+    <div className="relative min-h-screen w-full bg-gradient-to-b from-[#020084] to-[#000149] flex flex-col items-center py-16 px-4 overflow-hidden">
       {/* Back Button */}
       <button
         onClick={handleBackButtonClick}
-        className="absolute top-8 left-8 z-10 px-4 py-2 bg-gradient-to-r from-blue-400 to-purple-400 text-black  rounded-lg shadow-md hover:bg-gray-400 transition-all font-[Excon]"
+        className="absolute top-8 left-8 z-10 px-4 py-2 bg-gradient-to-r from-blue-400 to-purple-400 text-black  rounded-lg shadow-md hover:bg-gray-400 transition-all font-[Excon]" data-aos="flip-left"
       >
         Go Back
       </button>
@@ -32,7 +42,7 @@ const Page = () => {
         style={{ backgroundImage: "url('/Background.svg')" }}
       ></div>
 
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 z-10 max-sm:mt-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 shadow-2xl p-4">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 z-10 max-sm:mt-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 shadow-2xl p-4" data-aos="slide-down">
         <h2
           className="text-3xl font-bold text-center bg-clip-text font-[Excon] text-transparent bg-gradient-to-r from-blue-400 to-purple-400 mb-12"
           data-aos="fade-up"
@@ -41,9 +51,9 @@ const Page = () => {
         </h2>
 
         {/* Profile Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8" data-aos="zoom-in-up">
           {/* Member 1 */}
-          <div className="relative bg-gray-800/60 backdrop-blur-lg rounded-xl p-8 text-center shadow-lg border-2 border-blue-500/20 hover:border-blue-500/40 transition-all duration-300">
+          <div className="relative bg-gray-800/60 backdrop-blur-lg rounded-xl p-8 text-center shadow-lg border-2 border-blue-500/20 hover:border-blue-500/40 transition-all duration-300" data-aos="zoom-in-right">
             {/* Profile Image */}
             <div className="flex justify-center items-center mx-auto mb-6">
               <Image
@@ -87,7 +97,7 @@ const Page = () => {
           </div>
 
           {/* Member 2 */}
-          <div className="relative bg-gray-800/60 backdrop-blur-lg rounded-xl p-8 text-center shadow-lg border-2 border-blue-500/20 hover:border-blue-500/40 transition-all duration-300">
+          <div className="relative bg-gray-800/60 backdrop-blur-lg rounded-xl p-8 text-center shadow-lg border-2 border-blue-500/20 hover:border-blue-500/40 transition-all duration-300" data-aos="zoom-in">
             {/* Profile Image */}
             <div className="flex justify-center items-center mx-auto mb-6">
               <Image
@@ -131,7 +141,7 @@ const Page = () => {
           </div>
 
           {/* Member 3 */}
-          <div className="relative bg-gray-800/60 backdrop-blur-lg rounded-xl p-8 text-center shadow-lg border-2 border-blue-500/20 hover:border-blue-500/40 transition-all duration-300">
+          <div className="relative bg-gray-800/60 backdrop-blur-lg rounded-xl p-8 text-center shadow-lg border-2 border-blue-500/20 hover:border-blue-500/40 transition-all duration-300" data-aos="zoom-in-left">
             {/* Profile Image */}
             <div className="flex justify-center items-center mx-auto mb-6">
               <Image
@@ -175,110 +185,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-
-      {/* <div className="mt-32 py-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10  shadow-2xl">
-        <div className="container mx-auto px-4">
-          <h2
-            className="text-4xl font-bold text-center mb-10 text-white"
-            data-aos="fade-down"
-          >
-            <span className="bg-clip-text text-transparent fonr-[Excon] bg-gradient-to-r from-blue-400 to-purple-400 ">
-              Meet Our Technical Team
-            </span>
-          </h2>
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-1/2" data-aos="fade-right">
-              <Image
-                src="/images/team pics/Tech team.png"
-                alt="Group Picture"
-                className="rounded-lg shadow-lg border border-blue-500/20"
-                width={640}
-                height={500} // You can adjust the width and height as per your requirement
-              />
-            </div>
-
-            <div className="md:w-1/2 md:pl-12" data-aos="fade-left">
-              <h3 className="text-3xl font-bold mb-6 text-white font-[Khand]">
-                Innovating Through Technology
-              </h3>
-              <p className="text-gray-300 mb-4 text-sm leading-relaxed font-[GMVF]">
-                Our technical team is the backbone of the club, driving
-                innovation and excellence through technology. We&apos;re
-                passionate about creating impactful solutions and sharing
-                knowledge with our community.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div
-                  className="bg-gray-800/50 backdrop-blur p-6 rounded-xl shadow-lg border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300"
-                  data-aos="fade-up"
-                >
-                  <div className="text-blue-400 mb-3">
-                    <FaCode size={20} />
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2 font-[Khand]">
-                    Website Development
-                  </h3>
-                  <p className="text-gray-400 font-[GMVF]">
-                    Crafting seamless digital experiences through modern web
-                    technologies.
-                  </p>
-                </div>
-
-                <div
-                  className="bg-gray-800/50 backdrop-blur p-6 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  <div className="text-purple-400 mb-3">
-                    <FaCalendarAlt size={20} />
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2 font-[Khand]">
-                    Backbone of Events
-                  </h3>
-                  <p className="text-gray-400 font-[GMVF]">
-                    Ensuring flawless technical execution of all club events.
-                  </p>
-                </div>
-
-                <div
-                  className="bg-gray-800/50 backdrop-blur p-6 rounded-xl shadow-lg border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300"
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                >
-                  <div className="text-blue-400 mb-3">
-                    <GrWorkshop size={20} />
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2 font-[Khand]">
-                    Technical Workshops
-                  </h3>
-                  <p className="text-gray-400 font-[GMVF]">
-                    Conducting hands-on sessions on cutting-edge technologies.
-                  </p>
-                </div>
-
-                <div
-                  className="bg-gray-800/50 backdrop-blur p-6 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                >
-                  <div className="text-purple-400 mb-3">
-                    <FaLightbulb size={20} />
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2 font-[Khand]">
-                    Innovation Hub
-                  </h3>
-                  <p className="text-gray-400 font-[GMVF]">
-                    Fostering creativity and technical innovation within the
-                    community.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-      <div className="mt-16 sm:mt-32 py-6 sm:py-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden">
+      <div className="mt-16 sm:mt-32 py-6 sm:py-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden" data-aos="flip-right">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             className="text-3xl sm:text-4xl font-bold text-center mb-6 sm:mb-10 text-white"
@@ -289,15 +196,6 @@ const Page = () => {
             </span>
           </h2>
           <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-12">
-            {/* <div className="w-full md:w-1/2" data-aos="fade-right">
-              <Image
-                src="/images/team pics/Tech team.png"
-                alt="Group Picture"
-                className="w-full max-w-lg rounded-lg shadow-lg border border-blue-500/20"
-                width={640}
-                height={500}
-              />
-            </div> */}
             <div className="md:w-1/2" data-aos="fade-right">
             <Image 
               src="/TechTeam.png" 
@@ -390,7 +288,7 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="mt-32 z-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10  shadow-2xl p-12">
+      <div className="mt-32 z-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10  shadow-2xl p-12" data-aos="slide-up">
         <h2
           className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 font-[Excon]"
           data-aos="fade-up"

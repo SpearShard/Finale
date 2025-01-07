@@ -1,4 +1,7 @@
 "use client";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -13,15 +16,22 @@ const Page = () => {
 
   const handleBackButtonClick = () => {
     console.log("Navigating to /");
-    router.push("/");
+    router.back();
   };
 
+  useEffect(() => {
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+  }, []);
+
   return (
-    <div className="relative min-h-screen w-full bg-gradient-to-b from-[#020084] to-[#000149] flex flex-col items-center py-16 px-4">
+    <div className="relative min-h-screen w-full bg-gradient-to-b from-[#020084] to-[#000149] flex flex-col items-center py-16 px-4 overflow-hidden">
       {/* Back Button */}
       <button
         onClick={handleBackButtonClick}
-        className="absolute top-8 left-8 z-10 px-4 py-2 bg-gradient-to-r from-blue-400 to-purple-400 text-black font-semibold rounded-lg shadow-md hover:bg-gray-400 transition-all font-[Excon]"
+        className="absolute top-8 left-8 z-10 px-4 py-2 bg-gradient-to-r from-blue-400 to-purple-400 text-black font-semibold rounded-lg shadow-md hover:bg-gray-400 transition-all font-[Excon]" data-aos="fade-down-left"
       >
         Go Back
       </button>
@@ -33,7 +43,7 @@ const Page = () => {
       ></div>
 
       {/* Profile Section */}
-      <div className="relative mt-16 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 p-7 shadow-2xl">
+      <div className="relative mt-16 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 p-7 shadow-2xl" data-aos="zoom-in-down">
 
         <h2 className="text-4xl font-bold font-[Excon] text-center mb-10 text-white" data-aos="fade-down">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
@@ -79,7 +89,7 @@ const Page = () => {
         </div>
 
       </div>
-      <div className="mt-32 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 py-10 shadow-2xl">
+      <div className="mt-32 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 py-10 shadow-2xl" data-aos="zoom-in">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold font-[Excon] text-center mb-10 text-white" data-aos="fade-down">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
@@ -158,7 +168,7 @@ const Page = () => {
         </div>
       </div>
     </div>
-    <div className="mt-32 z-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 p-12 shadow-2xl">
+    <div className="mt-32 z-10 rounded-lg bg-gray-800/30 backdrop-blur-sm border border-white/10 p-12 shadow-2xl" data-aos="zoom-out-up">
       <h2 className="text-3xl font-[Excon] font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400" data-aos="fade-up">
         Team Volunteers
       </h2>
