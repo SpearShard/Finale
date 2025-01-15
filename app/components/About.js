@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { FaEye } from "react-icons/fa";
 import { IoIosRocket } from "react-icons/io";
 import { GoGoal } from "react-icons/go";
@@ -14,6 +16,13 @@ const About = () => {
   const visionRef = useRef(null);
   const missionRef = useRef(null);
   const goalRef = useRef(null);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
 
   useEffect(() => {
     const visionElement = visionRef.current;
@@ -55,10 +64,10 @@ const About = () => {
     <div ref={sectionRef} className=" mt-14 px-4 py-8 md:px-8 lg:px-16 h-auto relative">
       {/* Header */}
       <div className="text-center mb-12">
-        <h1 className="text-2xl font-[CB] sm:text-3xl lg:text-4xl font-bold mb-4">
+        <h1 className="text-2xl font-[CB] sm:text-3xl lg:text-4xl font-bold mb-4" data-aos="flip-up">
           About  <span className="text-blue-500"> MLSA Club</span>
         </h1>
-        <p className="text-sm sm:text-base max-w-3xl mx-auto font-[MB]">
+        <p className="text-sm sm:text-base max-w-3xl mx-auto font-[MB]" data-aos="flip-down">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum corrupti aliquam tempore quas, ab,
           perspiciatis quaerat eum cum exercitationem et reiciendis sequi, adipisci culpa.
         </p>

@@ -1,7 +1,15 @@
-import React from "react";
+import { useEffect } from "react";
 import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Second = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
   return (
       <div className="p-10 max-sm:p-3  ">
         {/* Flex container to align both boxes horizontally */}
@@ -14,9 +22,10 @@ const Second = () => {
               layout="fill"
               objectFit="contain"
               objectPosition="left"
-              className=" z-10"
+              className="z-10"
+              data-aos="slide-right"
             />
-            <div className="absolute inset-0 pl-[1.5vw] flex z-0 text-white text-[3vw] font-bold font-[CB]  max-lg:text-[3.6vw]  mb-auto">
+            <div className="absolute inset-0 pl-[1.5vw] flex z-0 text-white text-[3vw] font-bold font-[CB]  max-lg:text-[3.6vw]  mb-auto" data-aos="zoom-out-right">
 
               <h1 className="max-sm:text-[5vw]">
                 This is your <span className="text-blue-500 mx-[0.5vw]"> sign </span> to
@@ -27,8 +36,8 @@ const Second = () => {
           </div>
 
           {/* Yellow box */}
-          <div className="w-[38vw] ml-auto flex justify-center items-center max-sm:w-[100%] max-sm:p-[1vw]">
-            <h3 className="text-[1.5vw] font-[Excon] text-white max-sm:text-[3vw] ">
+          <div className="w-[38vw] ml-auto flex justify-center items-center max-sm:w-[100%] max-sm:p-[1vw]" data-aos="fade-left">
+            <h3 className="text-[1.5vw] font-[Excon] text-white max-sm:text-[3vw]">
               It was popularised in the 1960s with the release of Letraset
               sheets containing Lorem Ipsum passages, and more recently with
               desktop publishing software like Aldus PageMaker including
@@ -39,16 +48,27 @@ const Second = () => {
         
         <div className=" mt-[5vw] flex max-sm:flex-col items-center h-full w-full relative  max-sm:p-[5vw] ">
           {/* Left Image */}
-          <div className=" mt-auto w-full h-auto relative max-sm:p-[5vw] max-sm:bg-gradient-to-r from-[#3A3A3A] to-[#000000] max-sm:rounded-tl-[2rem] max-sm:rounded-bl-[2rem] max-sm:ml-[4rem] ">
+          <div className=" mt-auto w-full h-auto relative  max-sm:bg-gradient-to-br from-[#3a3a3a82] to-[#00000000] max-sm:rounded-tl-[23.69px] max-sm:rounded-bl-[23.69px] max-sm:ml-[4rem] ">
             <Image
               src="/boxes/left.svg"
               width={245}
               height={223}
               layout="responsive"
               objectFit="contain"
+              className="max-sm:hidden"
+              data-aos="slide-right"
+            />
+            <Image
+              src="/boxes/left-tp.svg"
+              width={245}
+              height={223}
+              layout="responsive"
+              objectFit="contain"
+              className="sm:hidden"
+              data-aos="slide-left"
             />
             {/* <div className="absolute inset-0 pl-5 flex z-0 text-white text-[1.5vw] font-bold font-[LM] bg-yellow-500"> */}
-              <h1 className="absolute inset-0 text-[1.2vw] font-[LM] p-[2vw] h-full w-full text-white max-sm:p-[10vw] max-sm:text-[3vw] ">
+              <h1 className="absolute inset-0 text-[1.2vw] font-[LM] p-[2vw] h-full w-full text-white max-sm:p-[10vw] max-sm:text-[3vw]" data-aos="zoom-out">
               It was popularised in the 1960s with the release of Letraset
               sheets containing Lorem Ipsum passages, and more recently with
               desktop publishing software like Aldus PageMaker 
@@ -57,15 +77,26 @@ const Second = () => {
           </div>
 
           {/* Center Image */}
-          <div className=" w-full  h-full mb-auto relative max-sm:p-[5vw] max-sm:bg-gradient-to-tr from-[#DCDCDC] to-[#767676] max-sm:rounded-tl-[2rem] max-sm:rounded-tr-[2rem] ">
+          <div className=" w-full  h-full mb-auto relative  max-sm:bg-gradient-to-r from-[#dcdcdc00] to-[#767676] max-sm:rounded-tr-[23.69px] max-sm:rounded-br-[23.69px] max-sm:mr-[4rem]">
             <Image
               src="/boxes/center.svg"
               width={245}
               height={223}
               layout="responsive"
               objectFit="contain"
+              className="max-sm:hidden"
+              data-aos="slide-up"
             />
-            <h1 className="absolute inset-0 text-[1.2vw] font-[LM] p-[2vw] h-full w-full max-sm:p-[10vw] max-sm:text-[3vw]">
+            <Image
+              src="/boxes/right-tp.svg"
+              width={245}
+              height={223}
+              layout="responsive"
+              objectFit="contain"
+              className="sm:hidden"
+              data-aos="slide-right"
+            />
+            <h1 className="absolute inset-0 text-[1.2vw] font-[LM] p-[2vw] h-full w-full max-sm:p-[10vw] max-sm:text-[3vw] text-black" data-aos="zoom-out">
               It was popularised in the 1960s with the release of Letraset
               sheets containing Lorem Ipsum passages, and more recently with
               desktop publishing software like Aldus PageMaker 
@@ -73,15 +104,26 @@ const Second = () => {
           </div>
 
           {/* Right Image */}
-          <div className=" w-full mt-auto h-full relative  max-sm:p-[5vw] max-sm:bg-gradient-to-br from-[#3A3A3A] to-[#000000] max-sm:rounded-tr-[2rem] max-sm:rounded-br-[2rem] max-sm:mr-[4rem]">
+          <div className=" w-full mt-auto h-full relative   max-sm:bg-gradient-to-tr from-[#3a3a3acc] to-[#00000000] max-sm:rounded-tl-[23.69px] max-sm:rounded-bl-[23.69px] max-sm:ml-[4rem]">
             <Image
               src="/boxes/right.svg"
               width={245}
               height={223}
               layout="responsive"
               objectFit="contain"
+              className="max-sm:hidden"
+              data-aos="slide-left"
             />
-            <h1 className="absolute inset-0 text-[1.2vw] font-[LM] p-[2vw] h-full w-full text-white max-sm:p-[10vw] max-sm:text-[3vw]">
+            <Image
+              src="/boxes/bor.svg"
+              width={245}
+              height={223}
+              layout="responsive"
+              objectFit="contain"
+              className="sm:hidden"
+              data-aos="slide-left"
+            />
+            <h1 className="absolute inset-0 text-[1.2vw] font-[LM] p-[2vw] h-full w-full text-white max-sm:p-[10vw] max-sm:text-[3vw]" data-aos="zoom-out">
               It was popularised in the 1960s with the release of Letraset
               sheets containing Lorem Ipsum passages, and more recently with
               desktop publishing software like Aldus PageMaker 

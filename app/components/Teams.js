@@ -1,5 +1,7 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Image from "next/image";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 import { useRouter } from "next/navigation";
@@ -7,6 +9,13 @@ import { useRouter } from "next/navigation";
 const Teams = () => {
   const containerRef = useRef(null);
   const router = useRouter();
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
 
   // Scroll dynamically based on container width
   const scrollDistance = 0.5 * (containerRef.current?.offsetWidth || 210);
@@ -23,7 +32,7 @@ const Teams = () => {
   <div className="relative w-full flex flex-col items-center justify-center  h-auto py-0  gap-4 ">
     {/* Heading and Paragraph Container */}
     <div className=" top-8 text-center w-full">
-      <h1 className="text-3xl font-[CB] sm:text-3xl lg:text-4xl font-bold mb-4">
+      <h1 className="text-3xl font-[CB] sm:text-3xl lg:text-4xl font-bold mb-4" data-aos="zoom-in">
         Meet Our <span className="text-blue-500">Team</span>
       </h1>
     </div>
@@ -38,6 +47,7 @@ const Teams = () => {
           key={index}
           onClick={() => router.push(`/teams/${member.path}`)}
           className="team-card  flex flex-shrink-0 flex-col justify-center items-center border-b-indigo-800 border-2 rounded-full hover:scale-105 hover:bg-gray-600 duration-300 cursor-pointer w-[200px] h-[200px] max-sm:w-[150px] max-sm:h-[150px] "
+          data-aos="zoom-out"
           
         >
           <Image
@@ -46,10 +56,11 @@ const Teams = () => {
             width={90}
             height={90}
             className="relative max-sm:w-[70px]"
+            data-aos="flip-right"
           />
-          <div>
-          <p className="text-xs font-bold">{member.name}</p>
-          </div>
+          {/* <div>
+          <p className="text-xs font-bold" data-aos>{member.name}</p>
+          </div> */}
         </div>
       ))}
     </div>
@@ -60,7 +71,7 @@ const Teams = () => {
       <button
         onClick={scrollLeft}
         className="flex justify-center items-center p-2 bg-gray-600 rounded-full shadow-lg hover:bg-gray-400 transition-all duration-300 text-black 
-                   w-[40px] h-[40px] md:w-[60px] md:h-[60px]"
+                   w-[40px] h-[40px] md:w-[60px] md:h-[60px]" data-aos="slide-right"
       >
         <IoIosArrowRoundBack size={30} />
       </button>
@@ -69,7 +80,7 @@ const Teams = () => {
       <button
         onClick={scrollRight}
         className="flex justify-center items-center p-2 bg-gray-600 text-black rounded-full shadow-lg hover:bg-gray-400 transition-all duration-300 
-                   w-[40px] h-[40px] md:w-[60px] md:h-[60px]"
+                   w-[40px] h-[40px] md:w-[60px] md:h-[60px]" data-aos="slide-left"
       >
         <IoIosArrowRoundForward size={30} />
       </button>

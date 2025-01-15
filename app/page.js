@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { gsap } from "gsap";
 import Lenis from "lenis";
 import Navbar from "./components/Navbar";
@@ -19,6 +21,13 @@ export default function Home() {
   const blobRef = useRef(null); // Ref for the blob.svg
   const [isMobile, setIsMobile] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false); // Track fullscreen state
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
 
   // Detect screen size on load and on resize
   useEffect(() => {
@@ -141,7 +150,7 @@ export default function Home() {
           <Navbar />
         </div>
 
-        <div className="logo-custom absolute mt-32 w-full  flex justify-center   max-sm:h-[36rem] max-sm:mt-[9.4rem] ">
+        <div className="logo-custom absolute mt-32 w-full  flex justify-center   max-custom:h-[36rem] max-custom:mt-[9.4rem] ">
           <Image
             ref={logoRef}
             src="/logo.svg"
@@ -153,11 +162,11 @@ export default function Home() {
 
         {/* Main Page Content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 w-full h-auto px-4 lg:px-8 py-12 gap-8 bg-am">
-          <div className="relative flex flex-col col-span-3 lg:flex-row items-center justify-between w-full bg-red h-[80vh] md:justify-center sm:justify-center max-sm:justify-center">
+          <div className="relative flex flex-col col-span-3 lg:flex-row items-center justify-between w-full bg-red h-[80vh] md:justify-center sm:justify-center max-sm:justify-center  ">
             {/* Text Section */}
             <div
               ref={textSectionRef}
-              className="text-white lg:w-1/2 text-center lg:text-left m-2 mb-8 lg:mb-0 bg-b z-10 lg:absolute lg:left-0 lg:ml-0 max-sm:p-3 "
+              className="text-white lg:w-auto text-center lg:text-left m-2 mb-8 lg:mb-0 bg-b z-10 lg:absolute lg:left-0 lg:ml-0 max-sm:p-3 lg:overflow-visible"
             >
               <h1 className="font-extrabold text-3xl md:text-5xl lg:text-6xl font-[CB] max-sm:mt-[2.5vh] bg-clip-text text-transparent bg-gradient-to-r from-[#8AAAE5] max-sm:-ml-[25vw] max-sm:text-[8vw]">
                 Microsoft Learn
@@ -176,13 +185,14 @@ export default function Home() {
             </div>
 
             {/* Foreground Image */}
-            <div className="absolute right-0 lg:w-1/2 flex justify-center lg:justify-end b h-full w-full pt-[3rem] md:h-auto sm:h-auto max-sm:pt-0 max-sm:h-auto  lg:ml-[10rem] z-0">
+            <div className="absolute right-0  flex justify-center lg:justify-end h-auto w-full pt-[3rem] md:h-auto sm:h-auto max-sm:pt-0 max-sm:h-auto lg:translate-x-[11rem] z-0  lg:w-[70vw]">
               <Image
                 ref={blobRef}
                 src="/blob.svg"
                 alt="MSC Logo"
-                width={800}
-                height={800}
+                layout="responsive"
+                width={500}
+                height={500}
                 className="rounded-sm bg-opacity-100 object-cover "
               />
             </div>
@@ -190,7 +200,7 @@ export default function Home() {
         </div>
 
         <div className="secpage w-full min-h-full ">
-          <Second/>
+          <Second />
         </div>
 
         {/* Section Divider */}
@@ -199,12 +209,11 @@ export default function Home() {
             src="/Banner2.svg"
             alt="banner"
             className="absolute"
-            // className="absolute z-0 w-full h-full object-cover max-sm:object-fill md:object-cover bg-rose-950"
             width={1920}
             height={36}
             layout="responsive"
             objectFit="contain"
-            
+            data-aos="slide-right"
           />
           <Image
             src="/Banner1.svg"
@@ -214,7 +223,7 @@ export default function Home() {
             height={36}
             layout="responsive"
             objectFit="contain"
-
+            data-aos="slide-left"
           />
         </div>
 
@@ -235,7 +244,7 @@ export default function Home() {
         </div>
 
         <div className="secpage w-full h-full  ">
-          <Fifth/>
+          <Fifth />
         </div>
 
         {/* Teams Section */}
