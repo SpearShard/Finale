@@ -8,8 +8,9 @@ import About from "./components/About";
 import Events from "./components/Events";
 import Teams from "./components/Teams";
 import Footer from "./components/Footer";
+import Second from "./components/Second";
+import Fifth from "./components/Fifth";
 // Import the Scroll component
-
 
 export default function Home() {
   const logoRef = useRef(null);
@@ -22,7 +23,7 @@ export default function Home() {
   // Detect screen size on load and on resize
   useEffect(() => {
     const lenis = new Lenis();
-    function raf(time, any){
+    function raf(time, any) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
@@ -35,7 +36,7 @@ export default function Home() {
 
     handleResize(); // Run on initial load
     window.addEventListener("resize", handleResize);
-  
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -60,8 +61,6 @@ export default function Home() {
       const logoScale = isMobile ? 0.18 : 0.25;
       const logoPosition = isMobile ? "-40vw" : "0";
       const logoVerticalShift = isMobile ? "-30rem" : "-27rem";
-      
-      
 
       const tl = gsap.timeline();
 
@@ -120,7 +119,6 @@ export default function Home() {
   return (
     <div id="home" className="min-h-full relative overflow-hidden bg-black">
       {/* Background Gradient Layer */}
-     
 
       {/* Background Image Layer */}
       {/* <div
@@ -130,14 +128,11 @@ export default function Home() {
         }}
       ></div> */}
 
-
       {/* Background Vector Image */}
       <div
         className="absolute inset-0 w-full h-full bg-center  max-sm:bg-contain lg:bg-cover z-0"
         style={{ backgroundImage: "url('/Background.svg')" }}
       ></div>
-
-      
 
       {/* Main Content */}
       <div className="relative z-10 h-full w-full">
@@ -145,7 +140,6 @@ export default function Home() {
         <div ref={navbarRef}>
           <Navbar />
         </div>
-
 
         <div className="logo-custom absolute mt-32 w-full  flex justify-center   max-sm:h-[36rem] max-sm:mt-[9.4rem] ">
           <Image
@@ -175,7 +169,9 @@ export default function Home() {
                 CIT CHAPTER
               </h2>
               <p className="p-3 text-sm md:text-base mt-4 font-[CB] max-sm:mt-[42vh] max-sm:text-left bg-[#11182784] max-sm:p-3 rounded-2xl max-sm:text-[3.5vw]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit pariatur porro mollitia, necessitatibus tenetur optio fugiat aut molestiae ea, velit totam dolore quam ratione?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+                pariatur porro mollitia, necessitatibus tenetur optio fugiat aut
+                molestiae ea, velit totam dolore quam ratione?
               </p>
             </div>
 
@@ -193,41 +189,59 @@ export default function Home() {
           </div>
         </div>
 
-        
+        <div className="secpage w-full min-h-full ">
+          <Second/>
+        </div>
 
         {/* Section Divider */}
-        <div className="-mt-16 relative w-full h-[16vh]">
+        <div className="relative w-full h-full mt-10">
           <Image
             src="/Banner2.svg"
             alt="banner"
-            className="absolute z-0 w-full h-full object-cover max-sm:object-fill md:object-cover"
+            className="absolute"
+            // className="absolute z-0 w-full h-full object-cover max-sm:object-fill md:object-cover bg-rose-950"
             width={1920}
             height={36}
+            layout="responsive"
+            objectFit="contain"
+            
           />
           <Image
             src="/Banner1.svg"
             alt="banner"
-            className="absolute z-10 w-full h-full object-cover max-sm:object-fill md:object-cover"
+            // className="absolute z-10 w-full h-full object-cover max-sm:object-fill md:object-cover"
             width={1920}
             height={36}
+            layout="responsive"
+            objectFit="contain"
+
           />
         </div>
 
-
         {/* About Section */}
-        <div id="about" className="about w-full min-h-screen scroll-mt-20 text-white px-4 lg:px-8 py-12 max-sm:py-0 max-sm:-mt-20  ">
+        <div
+          id="about"
+          className=" about w-full min-h-screen scroll-mt-20 text-white px-4 lg:px-8 py-12 max-sm:py-0 max-sm:-mt-20  "
+        >
           <About />
         </div>
 
         {/* Events Section */}
-        <div id="events" className="events w-full  text-white px-4 lg:px-8 py-12   relative">
+        <div
+          id="events"
+          className=" events w-full  text-white px-4 lg:px-8 py-12   relative"
+        >
           <Events />
+        </div>
+
+        <div className="secpage w-full h-full  ">
+          <Fifth/>
         </div>
 
         {/* Teams Section */}
         <div
           id="teams"
-          className="teams w-full h-full text-white overflow-x-visible scroll-mt-10 px-4 lg:px-8 py-36   relative "
+          className=" teams w-full h-full text-white overflow-x-visible scroll-mt-10 px-4 lg:px-8 py-24   relative"
         >
           <Teams />
         </div>

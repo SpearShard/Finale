@@ -62,6 +62,10 @@
   font-family: 'GVF';
   src: url('./fonts/GeistVF.woff') format('woff');
 }
+@font-face{
+  font-family: 'LM';
+  src: url('./fonts/LEMONMILK-Regular.woff2') format('woff2');
+}
 
 
 html::-webkit-scrollbar{
@@ -69,7 +73,3 @@ html::-webkit-scrollbar{
 }
 
 
-
-
-
-  
