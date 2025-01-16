@@ -12,8 +12,11 @@ const Teams = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      offset:200,
+      duration: 300,
+      easing: "ease-out",
       once: true,
+      mirror:false
     });
   }, []);
 

@@ -23,11 +23,14 @@ export default function Home() {
   const [isFullscreen, setIsFullscreen] = useState(false); // Track fullscreen state
 
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
+      AOS.init({
+        offset:120,
+        duration: 1000,
+        easing: "ease-out",
+        once: true,
+        mirror:false
+      });
+    }, []);
 
   // Detect screen size on load and on resize
   useEffect(() => {

@@ -5,11 +5,14 @@ import "aos/dist/aos.css";
 
 const Second = () => {
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
+      AOS.init({
+        offset:120,
+        duration: 1000,
+        easing: "ease-out",
+        once: true,
+        mirror:false
+      });
+    }, []);
   return (
       <div className="p-10 max-sm:p-3  ">
         {/* Flex container to align both boxes horizontally */}

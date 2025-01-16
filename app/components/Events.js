@@ -10,11 +10,14 @@ const Events = () => {
   const eventsSectionRef = useRef(null);
 
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
+      AOS.init({
+        offset:120,
+        duration: 1000,
+        easing: "ease-out",
+        once: true,
+        mirror:false
+      });
+    }, []);
 
   const setEventRef = (el) => {
     if (el && !eventRefs.current.includes(el)) {

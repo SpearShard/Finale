@@ -18,11 +18,14 @@ const About = () => {
   const goalRef = useRef(null);
 
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
+      AOS.init({
+        offset:120,
+        duration: 1000,
+        easing: "ease-out",
+        once: true,
+        mirror:false
+      });
+    }, []);
 
   useEffect(() => {
     const visionElement = visionRef.current;

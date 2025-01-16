@@ -3,15 +3,18 @@ import React, { useEffect, useRef } from 'react';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
+import { easeIn } from 'framer-motion';
 
 const Fifth = () => {
 
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
+      AOS.init({
+        offset:200,
+        duration: 300,
+        once: true,
+        mirror:false
+      });
+    }, []);
 
   return (
     <div className="p-6 sm:p-10">

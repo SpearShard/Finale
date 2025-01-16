@@ -1,5 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Image from "next/image";
 import Cookies from "js-cookie";
 import { Link } from "react-scroll";
@@ -11,7 +13,17 @@ const Navbar = () => {
   const dropdownRef = React.useRef(null);
   const leftNavRef = React.useRef(null);
   const rightNavRef = React.useRef(null);
-  const hamburgerRef = React.useRef(null); // Ref for the hamburger icon
+  const hamburgerRef = React.useRef(null); 
+
+  useEffect(() => {
+      AOS.init({
+        offset:120,
+        duration: 500,
+        easing: "ease-out",
+        once: true,
+        mirror:false
+      });
+    }, []);
 
   useEffect(() => {
     const authStatus = Cookies.get("isAuthenticated") === "true";
@@ -190,9 +202,9 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navbar */}
-      <div className="custom:hidden w-full flex items-center justify-between h-20 px-4 py-3 bg-[#64748b45] relative">
+      <div className="custom:hidden w-full flex items-center justify-between h-20 px-4 py-3 bg-[#64748b45] relative" data-aos="slide-down">
         <button
-          className="flex flex-col justify-center items-center space-y-1 focus:outline-none ml-auto"
+          className="flex flex-col justify-center items-center space-y-1 focus:outline-none ml-auto" 
           onClick={toggleMenu}
           ref={hamburgerRef}
         >
