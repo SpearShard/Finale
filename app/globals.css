@@ -73,22 +73,4 @@ html::-webkit-scrollbar{
 }
 
 
-/* Force hardware acceleration */
-[data-scroll-container] {
-  transform: translateZ(0);
-  will-change: transform;
-}
 
-/* Optimize fixed elements */
-[data-scroll-section] {
-  backface-visibility: hidden;
-  transform: translateZ(0);
-}
-
-/* Disable smooth scroll on mobile */
-@media (max-width: 768px) {
-  [data-scroll-container] {
-    overflow: auto !important;
-    height: auto !important;
-  }
-}
