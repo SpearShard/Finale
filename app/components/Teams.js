@@ -43,8 +43,8 @@ const Teams = () => {
     {/* Team Member Images Container */}
     <div
       ref={containerRef}
-      className="space-x-2 w-full h-full flex scroll-smooth px-2 py-2 whitespace-nowrap  overflow-x-auto no-scrollbar bg-slate-500
-       2xl:justify-center 2xl:grid grid-cols-3 grid-rows-3 gap-4 2xl:w-1/3"
+      className="space-x-2 w-full h-full flex scroll-smooth px-2 py-2 whitespace-nowrap  overflow-x-auto no-scrollbar 
+       "
     >
       {teamData.map((member, index) => (
         <div
