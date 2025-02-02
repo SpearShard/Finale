@@ -202,7 +202,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navbar */}
-      <div className="custom:hidden w-full flex items-center justify-between h-20 px-4 py-3 bg-[#64748b45] relative" data-aos="slide-down">
+      <div className="custom:hidden w-full flex items-center justify-between h-20 px-4 py-3 bg-[#64748b45] relative font-[Technor] " >
         <button
           className="flex flex-col justify-center items-center space-y-1 focus:outline-none ml-auto" 
           onClick={toggleMenu}
@@ -217,7 +217,7 @@ const Navbar = () => {
         {/* Dropdown menu */}
         <div
           ref={dropdownRef}
-          className="absolute top-full left-0 right-0 bg-[#64748b80] backdrop-blur-md bg-opacity-80 text-white rounded-lg shadow-lg mt-2 p-4 flex flex-col space-y-4 z-50 max-sm:ml-3 max-sm:mr-3 "
+          className="absolute top-full left-0 right-0 bg-gradient-to-b from-[#02008400] to-[#00014900] backdrop-blur-md bg-opacity-80 text-white rounded-lg shadow-lg mt-2 p-4 flex flex-col space-y-4 z-50 max-sm:ml-3 max-sm:mr-3  border-[1px] border-[#ffffff56]"
           style={{
             display: isMenuOpen ? "flex" : "none",
             flexDirection: "column",
@@ -227,7 +227,7 @@ const Navbar = () => {
             to="home"
             smooth={true}
             duration={500}
-            className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300"
+            className="hover:text-slate-500 text-bold hover:scale-110 transition-transform duration-300  pl-1 "
             onClick={() => setIsMenuOpen(false)}
           >
             HOME
@@ -237,7 +237,7 @@ const Navbar = () => {
             smooth={true}
             duration={500}
             offset={-80}
-            className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300"
+            className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300  pl-1 border-[#ffffff5e]"
             onClick={() => setIsMenuOpen(false)}
           >
             ABOUT
@@ -247,7 +247,7 @@ const Navbar = () => {
             smooth={true}
             duration={500}
             offset={-80}
-            className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300"
+            className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300  pl-1 border-[#ffffff5e]"
             onClick={() => setIsMenuOpen(false)}
           >
             TEAM
@@ -257,7 +257,7 @@ const Navbar = () => {
             smooth={true}
             duration={500}
             offset={-80}
-            className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300"
+            className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300  pl-1 border-[#ffffff5e]"
             onClick={() => setIsMenuOpen(false)}
           >
             EVENTS
@@ -266,14 +266,14 @@ const Navbar = () => {
             <>
               <Link
                 href="/login"
-                className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300"
+                className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300  pl-1 border-[#ffffff5e]"
                 onClick={() => setIsMenuOpen(false)}
               >
                 LOGIN
               </Link>
               <Link
                 href="/signup"
-                className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300"
+                className="hover:text-slate-300 text-bold hover:scale-110 transition-transform duration-300  pl-1 border-[#ffffff5e]"
                 onClick={() => setIsMenuOpen(false)}
               >
                 SIGN UP

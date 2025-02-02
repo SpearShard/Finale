@@ -103,7 +103,7 @@ export default function Home() {
         textSectionRef.current,
         { opacity: 0, y: 50 },
         { opacity: 1, y: 0, duration: 1 },
-        "<+0.5" // Add a slight delay to start the animation after logo finishes
+        "<+0.5" 
       );
 
       // Blob animation after text animation
@@ -130,15 +130,6 @@ export default function Home() {
 
   return (
     <div id="home" className="min-h-full relative overflow-hidden bg-black">
-      {/* Background Gradient Layer */}
-
-      {/* Background Image Layer */}
-      {/* <div
-        className="absolute inset-0 w-screen h-screen bg-center bg-no-repeat sm:bg-contain min-lg:bg-cover"
-        style={{
-          backgroundImage: "url('/Background.svg')",
-        }}
-      ></div> */}
 
       {/* Background Vector Image */}
       <div

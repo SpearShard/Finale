@@ -6,6 +6,20 @@ import { IoIosRocket } from "react-icons/io";
 import { GoGoal } from "react-icons/go";
 
 const About = () => {
+
+  const [isMobile, setIsMobile] = useState(false);
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 640);
+      };
+  
+      handleResize(); // Check screen size initially
+      window.addEventListener("resize", handleResize);
+  
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
   const [isInView, setIsInView] = useState({
     vision: false,
     mission: false,
@@ -27,40 +41,40 @@ const About = () => {
       });
     }, []);
 
-  useEffect(() => {
-    const visionElement = visionRef.current;
-    const missionElement = missionRef.current;
-    const goalElement = goalRef.current;
+  // useEffect(() => {
+  //   const visionElement = visionRef.current;
+  //   const missionElement = missionRef.current;
+  //   const goalElement = goalRef.current;
   
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            if (entry.target === visionElement) {
-              setIsInView((prev) => ({ ...prev, vision: true }));
-            }
-            if (entry.target === missionElement) {
-              setIsInView((prev) => ({ ...prev, mission: true }));
-            }
-            if (entry.target === goalElement) {
-              setIsInView((prev) => ({ ...prev, goal: true }));
-            }
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting) {
+  //           if (entry.target === visionElement) {
+  //             setIsInView((prev) => ({ ...prev, vision: true }));
+  //           }
+  //           if (entry.target === missionElement) {
+  //             setIsInView((prev) => ({ ...prev, mission: true }));
+  //           }
+  //           if (entry.target === goalElement) {
+  //             setIsInView((prev) => ({ ...prev, goal: true }));
+  //           }
+  //         }
+  //       });
+  //     },
+  //     { threshold: 0.5 }
+  //   );
   
-    if (visionElement) observer.observe(visionElement);
-    if (missionElement) observer.observe(missionElement);
-    if (goalElement) observer.observe(goalElement);
+  //   if (visionElement) observer.observe(visionElement);
+  //   if (missionElement) observer.observe(missionElement);
+  //   if (goalElement) observer.observe(goalElement);
   
-    return () => {
-      if (visionElement) observer.unobserve(visionElement);
-      if (missionElement) observer.unobserve(missionElement);
-      if (goalElement) observer.unobserve(goalElement);
-    };
-  }, []);
+  //   return () => {
+  //     if (visionElement) observer.unobserve(visionElement);
+  //     if (missionElement) observer.unobserve(missionElement);
+  //     if (goalElement) observer.unobserve(goalElement);
+  //   };
+  // }, []);
   
 
   return (
@@ -81,15 +95,14 @@ const About = () => {
         {/* Vision Card */}
         <div
           ref={visionRef}
-          className={`flex flex-col items-center bg-gray-900 bg-opacity-80 w-full lg:w-1/3 p-6 rounded-xl shadow-lg transition-transform duration-1000 ease-out ${
-            isInView.vision ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
-          }`}
+          className={`flex flex-col items-center bg-gray-900 bg-opacity-80 w-full lg:w-1/3 p-6 rounded-xl shadow-lg `}
+          data-aos={isMobile ? "slide-right" : "zoom-in-right"}
         >
-          <div className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 mb-6 rounded-full border-4 border-white bg-gray-800">
+          <div className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 mb-6 rounded-full border-4 border-white bg-gray-800" >
             <FaEye className="text-4xl sm:text-5xl text-white" />
           </div>
-          <h2 className="text-lg sm:text-xl font-semibold mb-4 text-center font-[Array]">Vision</h2>
-          <p className="text-xs sm:text-sm lg:text-base text-center font-[MB]">
+          <h2 className="text-lg sm:text-xl font-semibold mb-4 text-center font-[Array] " >Vision</h2>
+          <p className="text-xs sm:text-sm lg:text-base text-center font-[MB]" >
             At MLSA CIT, the vision is a world where technology is not just a tool, but a force for good—transforming
             ideas into impactful solutions and empowering individuals to shape a better future.
           </p>
@@ -98,15 +111,14 @@ const About = () => {
         {/* Mission Card */}
         <div
           ref={missionRef}
-          className={`flex flex-col items-center bg-gray-700 bg-opacity-80 w-full lg:w-1/3 p-6 rounded-xl shadow-lg transition-transform duration-1000 ease-out ${
-            isInView.mission ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
-          }`}
+          className={`flex flex-col items-center bg-gray-700 bg-opacity-80 w-full lg:w-1/3 p-6 rounded-xl shadow-lg `}
+          data-aos={isMobile ? "slide-left" : "zoom-in-up"}
         >
-          <div className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 mb-6 rounded-full border-4 border-white bg-gray-800">
+          <div className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 mb-6 rounded-full border-4 border-white bg-gray-800" >
             <IoIosRocket className="text-4xl sm:text-5xl text-white" />
           </div>
-          <h2 className="text-lg sm:text-xl font-semibold mb-4 text-center font-[Array]">Mission</h2>
-          <p className="text-xs sm:text-sm lg:text-base text-center font-[MB]">
+          <h2 className="text-lg sm:text-xl font-semibold mb-4 text-center font-[Array]" >Mission</h2>
+          <p className="text-xs sm:text-sm lg:text-base text-center font-[MB]" >
             MLSA CIT is committed to going beyond textbooks by equipping individuals with the knowledge, skills, and
             resources to make an impact through hands-on learning opportunities such as workshops, webinars, and events.
           </p>
@@ -115,9 +127,8 @@ const About = () => {
         {/* Goal Card */}
         <div
           ref={goalRef}
-          className={`flex flex-col items-center bg-gray-900 bg-opacity-80 w-full lg:w-1/3 p-6 rounded-xl shadow-lg transition-transform duration-1000 ease-out ${
-            isInView.goal ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
-          }`}
+          className={`flex flex-col items-center bg-gray-900 bg-opacity-80 w-full lg:w-1/3 p-6 rounded-xl shadow-lg`}
+          data-aos={isMobile ? "slide-right" : "zoom-in-left"}
         >
           <div className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 mb-6 rounded-full border-4 border-white bg-gray-800">
             <GoGoal className="text-4xl sm:text-5xl text-white" />

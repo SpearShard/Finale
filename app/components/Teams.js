@@ -43,13 +43,14 @@ const Teams = () => {
     {/* Team Member Images Container */}
     <div
       ref={containerRef}
-      className="space-x-2 w-full h-full flex scroll-smooth px-2 py-2 whitespace-nowrap  overflow-x-auto no-scrollbar"
+      className="space-x-2 w-full h-full flex scroll-smooth px-2 py-2 whitespace-nowrap  overflow-x-auto no-scrollbar bg-slate-500
+       2xl:justify-center 2xl:grid grid-cols-3 grid-rows-3 gap-4 2xl:w-1/3"
     >
       {teamData.map((member, index) => (
         <div
           key={index}
           onClick={() => router.push(`/teams/${member.path}`)}
-          className="team-card  flex flex-shrink-0 flex-col justify-center items-center border-b-indigo-800 border-2 rounded-full hover:scale-105 hover:bg-gray-600 duration-300 cursor-pointer w-[200px] h-[200px] max-sm:w-[150px] max-sm:h-[150px] "
+          className="team-card  flex flex-shrink-0 flex-col justify-center items-center border-l-indigo-800 border-t-indigo-800 border-2 rounded-full hover:scale-105 hover:bg-gray-600 duration-300 cursor-pointer w-[200px] h-[200px] max-sm:w-[150px] max-sm:h-[150px] "
           data-aos="zoom-out"
           
         >
